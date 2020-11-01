@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>User Info</h1>
+<div mat-dialog-content class="content">
+  <div class="avatar">
+    <img [src]="userInfo.image_url ? userInfo.image_url : '/assets/default_user.svg'" />
+  </div>
+  <div class="text">
+    <p> <span class="label">Name:</span> {{userInfo.name}}</p>
+    <p> <span class="label">Last Name:</span> {{userInfo.last_name}}</p>
+    <p> <span class="label">Age:</span> {{userInfo.age}}</p>
+    <p> <span class="label">Is Covid Positive:</span> {{userInfo.is_COVID_positive}}</p>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

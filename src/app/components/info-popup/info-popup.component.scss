@@ -1,0 +1,17 @@
+:host {
+  .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .avatar{
+      margin: 0 40px 0 0;
+      img {
+        width: 100px;
+      }
+    }
+    .label {
+      color: rgba(0,0,0,.87);
+      font-weight: bold;
+    }
+  }
+}

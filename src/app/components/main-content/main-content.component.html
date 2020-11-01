@@ -1,0 +1,48 @@
+<div class="flip-wrap">
+  <div class="slider-block">
+    <div class="text">
+      Number of rows: <span class="count">{{userCounter}}</span>
+    </div>
+    <div class="slider">
+      <mat-slider
+        #mySlider
+        (change)="seeChanges(mySlider.value)"
+        min="1"
+        max="20"></mat-slider>
+    </div>
+
+  </div>
+  <div *ngIf="isLoading" class="loading">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  <div *ngIf="showTable">
+    <table mat-table [dataSource]="users" class="mat-elevation-z8 user-table">
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="last_name">
+        <th mat-header-cell *matHeaderCellDef> Last Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef> Age </th>
+        <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="is_covid">
+        <th mat-header-cell *matHeaderCellDef> Is Covid </th>
+        <td mat-cell *matCellDef="let element"> {{element.is_COVID_positive}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openInfoPopup(row)"></tr>
+    </table>
+  </div>
+</div>

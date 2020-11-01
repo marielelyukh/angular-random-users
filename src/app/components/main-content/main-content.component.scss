@@ -1,0 +1,33 @@
+:host {
+  .flip-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 100px;
+    .slider-block{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 20px 0;
+      align-items: center;
+      align-self: flex-start;
+      .text {
+        color: rgba(0,0,0,.54);
+        margin-right: 20px;
+        .count {
+          color: rgba(0,0,0,.87);
+        }
+      }
+    }
+    .loading {
+      padding: 0 0 20px 0;
+      display: flex;
+      justify-content: center;
+    }
+    table {
+      width: 100%;
+    }
+  }
+
+}
